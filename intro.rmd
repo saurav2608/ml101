@@ -3,7 +3,8 @@ Introduction to Machine Learning in R and Python
 author: 
 date: 
 autosize: true
-output: revealjs::revealjs_presentation
+runtime: shiny
+output: ioslides_presentation
 
 What is Machine Learning
 ========================================================
@@ -33,19 +34,16 @@ We can siplify the process by "Hyperparameters" and "Parameters". HPs are design
 
 Supervised Machine Learning - Linear Models
 ========================================================
+```{r, echo = FALSE}
+shiny::numericInput("rows", "How many cars?", 5)
 
-Demo - Fitting a Linear Curve
+shiny::renderTable({
+  head(cars, input$rows)
+})
+```
 
-Linear Models - Loss
-========================================================
-
-* Which curve is best? 
-* To measure "best" we need to know the degree of closeness between the candidate Hypothesis Function and "real" function 
-* This can be measured by Loss Function
-
-Linear Models - Loss 2
-========================================================
-
+TODO: Basic Intuition 
+TODO: Linear Models
 TODO: Cost Function
 TODO: Optimization 
 TODO: Codes in Python and R to model one cost function and do one optimization
